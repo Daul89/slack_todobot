@@ -18,10 +18,13 @@ class Listener(Resource):
     def post(self):
         
         text = request.form.get('text')
-        indicator, param = text.split(None, 1)
+        try:
+        	indicator, param = text.split(None, 1)
+        else:
+        	indicator = text
 
         if(indicator == 'list'):
-            api_call = Listener2()
+            api_call = Tasks()
             return api_call.get()
 
         else:
