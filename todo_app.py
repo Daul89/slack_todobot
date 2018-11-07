@@ -20,6 +20,8 @@ class Listener(Resource):
         text = request.form.get('text')
         try:
             indicator, param = text.split(None, 1)
+        except:
+            pass
         else:
             indicator = text
 
