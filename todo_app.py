@@ -14,7 +14,7 @@ class Listener(Resource):
     #To do : Try and exception
     def post(self, **kwargs):
         
-        return {"text": json.dump(kwargs)}
+        return {"text": json.dumps(kwargs)}
 
 api.add_resource(Listener, '/listener')
 
