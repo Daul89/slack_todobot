@@ -16,6 +16,9 @@ class Listener(Resource):
         
         return {"text": json.dumps(kwargs)}
 
+    def get(self, **kwargs):
+        return {"text": json.dumps(kwargs)}
+
 api.add_resource(Listener, '/listener')
 
 if __name__ == '__main__':
