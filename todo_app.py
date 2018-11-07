@@ -17,7 +17,7 @@ class Listener(Resource):
         indicator = request.form.get('text')
         if(indicator == 'list'):
             api_call = Listener2()
-            api_call.post()
+            return api_call.post()
 
         #return {"text": json.dumps(request.form)}
 """
