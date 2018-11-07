@@ -26,7 +26,7 @@ class Listener(Resource):
             return api_call.get()
 
         else:
-        	return {"text": "Sorry dude"}
+        	return {"text": indicator.json()}
 
         #return {"text": json.dumps(request.form)}
 """
