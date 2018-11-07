@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Resource, Api
 from flask_restful import reqparse
+import json
 
 app = Flask(__name__)
 api = Api(app)
@@ -13,7 +14,7 @@ class Listener(Resource):
     #To do : Try and exception
     def post(self, **kwargs):
         
-        return {"text": kwargs.keys()}
+        return {"text": json.dump(kwargs)}
 
 api.add_resource(Listener, '/listener')
 
