@@ -19,9 +19,9 @@ class Listener(Resource):
         
         text = request.form.get('text')
         try:
-        	indicator, param = text.split(None, 1)
+            indicator, param = text.split(None, 1)
         else:
-        	indicator = text
+            indicator = text
 
         if(indicator == 'list'):
             api_call = Tasks()
