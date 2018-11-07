@@ -17,7 +17,7 @@ class Listener(Resource):
         return {"text": json.dumps(kwargs)}
 
     def get(self, **kwargs):
-        return {"text": json.dumps(kwargs['key1'])}
+        return {"text": json.dumps(kwargs.keys())}
 
 api.add_resource(Listener, '/listener')
 
