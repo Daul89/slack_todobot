@@ -12,8 +12,8 @@ def hello():
 class Listener(Resource):
     #To do : Try and exception
     def post(self, **kwargs):
-        print kwargs
-        return {"text": kwargs}
+        
+        return {"text": kwargs['text']}
 
 api.add_resource(Listener, '/listener')
 
