@@ -13,7 +13,7 @@ class Listener(Resource):
     #To do : Try and exception
     def post(self, **kwargs):
         
-        return {"text": kwargs['text']}
+        return {"text": kwargs.keys()}
 
 api.add_resource(Listener, '/listener')
 
