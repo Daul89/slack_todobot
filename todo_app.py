@@ -10,7 +10,7 @@ def hello():
 
 class CreateUser(Resource):
     def post(self):
-        return {"text": "@here yes my lord"}
+        return {"text": "yes my lord", "username": "daul"}
 
 api.add_resource(CreateUser, '/user')
 
