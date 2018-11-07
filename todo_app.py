@@ -10,14 +10,22 @@ api = Api(app)
 def hello():
     return 'hello'
 
+COMMAND_LISTS = ['list', 'show', 'add', 'delete']
+
 class Listener(Resource):
-    #To do : Try and exception
+    #To do : Try and exception, clear infinite loop
+
     def post(self):
         
-        indicator = request.form.get('text')
+        text = request.form.get('text')
+        indicator, param = text.split(None, 1)
+
         if(indicator == 'list'):
             api_call = Listener2()
-            return api_call.post()
+            return api_call.get()
+
+        else:
+        	return {"text": "Sorry dude"}
 
         #return {"text": json.dumps(request.form)}
 """
@@ -33,13 +41,16 @@ request.form has follwing dictionary
 api.add_resource(Listener, '/listener')
 
 
-class Listener2(Resource):
+class Tasks(Resource):
     #To do : Try and exception
     def post(self):
 
         return {"text": "hello universe"}
 
-api.add_resource(Listener2, '/listener2')
+    def get(self):
+    	return {"text": "Hello Universe"}
+
+api.add_resource(Tasks, '/tasks')
 
 if __name__ == '__main__':
     #app.run(host='127.0.0.1', port=8100, debug=True)
