@@ -10,7 +10,7 @@ def hello():
 
 class CreateUser(Resource):
     def post(self):
-        return {'status': 'success'}
+        return {"text": "yes my lord"}
 
 api.add_resource(CreateUser, '/user')
 
