@@ -17,9 +17,20 @@ class Listener(Resource):
         return {"text": json.dumps(kwargs)}
 
     def get(self, **kwargs):
-        return {"text": json.dumps(kwargs.keys())}
+        return {"text": json.dumps(kwargs)}
 
 api.add_resource(Listener, '/listener')
+
+class Listener2(Resource):
+    #To do : Try and exception
+    def post(self, **kwargs):
+        
+        return {"text": json.dumps(kwargs)}
+
+    def get(self, **kwargs):
+        return {"text": json.dumps(kwargs)}
+
+api.add_resource(Listener2, '/listener2')
 
 if __name__ == '__main__':
     #app.run(host='127.0.0.1', port=8100, debug=True)
