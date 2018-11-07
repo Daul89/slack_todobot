@@ -18,11 +18,12 @@ class Listener(Resource):
     def post(self):
         
         text = request.form.get('text')
+
         try:
             indicator, param = text.split(None, 1)
         except:
             pass
-        else:
+        finally:
             indicator = text
 
         if(indicator == 'list'):
