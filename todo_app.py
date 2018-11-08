@@ -26,7 +26,10 @@ class Listener(Resource):
             raise e
 
         indicator = text.split(None, 1)[0]
-        params = text.split(None, 1)[1] or None
+        try:
+            params = text.split(None, 1)[1]
+        except:
+            params = None
 
         if(indicator == 'list'):
             return api_call.get()
