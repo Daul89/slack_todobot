@@ -26,7 +26,7 @@ RESPONSE EXAMPLE:
 `1. GET /tasks`   
 `2. GET /task/<id>`     
 `3. POST /tasks`   
-`4. POST /tasks/<id>`  
+`4. POST /task/<id>`  
 `5. DELETE /task/<id>`  
 
 Delete does not "Delete" actual db record?
@@ -122,7 +122,7 @@ db record to is_deleted
 
 **Definition**
 
-`POST /tasks/<id>`
+`POST /task/<id>`
 
 **Arguments**
 
@@ -153,7 +153,7 @@ db record to is_deleted
 
 **Definition**
 
-`DELETE /tasks/<id>`
+`DELETE /task/<id>`
 
 **Arguments**
 
