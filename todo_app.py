@@ -12,12 +12,11 @@ def hello():
 
 COMMAND_LISTS = ['list', 'show', 'add', 'delete']
 
+__api_call = Tasks()
+
 
 class Listener(Resource):
     #To do : Try and exception, clear infinite loop
-
-    def __init__(self):
-        self.api_call = Tasks()
 
     def post(self):
         try:
@@ -32,7 +31,7 @@ class Listener(Resource):
             params = None
 
         if(indicator == 'list'):
-            return api_call.get()
+            return __api_call.get()
 
         else:
             return {"text": json.dumps(indicator)+json.dumps(params)}
