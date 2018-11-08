@@ -24,11 +24,8 @@ class Listener(Resource):
         except Exception as e:
             raise e
 
-        indicator = text.split(None, 1)[0]
-        try:
-            params = text.split(None, 1)[1]
-        except:
-            params = None
+#        indicator = text.split(None, 1)[0]
+        indicator = text
 
         if(indicator == 'list'):
             return __api_call.get()
