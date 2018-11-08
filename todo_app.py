@@ -12,9 +12,6 @@ def hello():
 
 COMMAND_LISTS = ['list', 'show', 'add', 'delete']
 
-__api_call = Tasks()
-
-
 class Listener(Resource):
     #To do : Try and exception, clear infinite loop
 
@@ -28,6 +25,7 @@ class Listener(Resource):
         indicator = text
 
         if(indicator == 'list'):
+            __api_call = Tasks()
             return __api_call.get()
 
         else:
@@ -54,7 +52,7 @@ class Tasks(Resource):
         return {"text": "hello universe"}
 
     def get(self):
-    	return {"text": "Hello Universe"}
+        return {"text": "Hello Universe"}
 
 api.add_resource(Tasks, '/tasks')
 
